@@ -35,6 +35,23 @@ class Elephant(Animal):
     def feed(self):
         print(f"{self.name} est travu")
 
+
+class Zoo:
+    def __init__(self):
+        self.animals = []
+    
+    def add_animal(self, animal):
+        self.animals.append(animal)
+        print(f"{animal.name} added to zoo")
+
+    def show_all(self):
+        for animal in self.animals:
+            print(f"{animal.name}, {animal.age} vozsrat")
+    
+    def make_all_sound(self):
+        for animal in self.animals:
+            animal.make_sound()
+
 lion = Lion("Yerassyl", 18)
 monkey = Monkey("Aknazar", 15)
 elephant = Elephant("Persidskiy", 15)
@@ -46,3 +63,14 @@ elephant.make_sound()
 lion.feed()
 monkey.feed()
 elephant.feed()
+
+zoo = Zoo()
+
+zoo.add_animal(lion)
+zoo.add_animal(monkey)
+zoo.add_animal(elephant)
+
+zoo.show_all()
+
+zoo.make_all_sound()
+
